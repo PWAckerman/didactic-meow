@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Didactic Meow</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.css" media="screen" title="no title" charset="utf-8">
+  <link href='https://fonts.googleapis.com/css?family=Quicksand:400,300,700' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
+</head>
+
+<body ng-app="didacticMeowApp" class="offwhite-b">
+<div class="nav-header blood-orange-b inline">
+  <img class="logo-button inline" id="user" src="http://placehold.it/120x120"/>
+  <div class="user-menu" id="usermenu">
+    <div class="whiteish-b user-header">
+      <img src="static/tech.png" class="user-avatar"/>
+      <span class="whiteish-t inline username">Mimi Rogers</span>
+      <span class="whiteish-t inline role">Vet Technician</span></br>
+      <span class="whiteish-t inline ownername">VHUP</span>
+    </div>
+    <div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Organization</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Profile</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Assigned Patients</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Settings</span></div>
+    </div>
+  </div>
+  <p class="whiteish-t central inline">didactic meow</p>
+  <img id="patient" class="menu-button" src="/static/menubtn.svg"/>
+  <div class="patient-menu" id="patientmenu">
+    <div class="whiteish-b profile-header">
+      <img src="static/pet.png" class="patient-avatar"/>
+      <span class="whiteish-t inline petname">Mr. Jelly Beans</span>
+      <span class="whiteish-t inline breed">Jack Russell Terrier</span>
+      <span class="whiteish-t inline ownername">Alice Roberts</span>
+    </div>
+    <div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">History</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Vitals</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Medication</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Labs</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Orders</span></div>
+    </div>
+  </div>
+</div>
+
+
+  <div class="container" ui-view></div>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
+  <script src="https://cdn.firebase.com/js/client/2.2.4/firebase.js"></script>
+  <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
+  <script src="js/app.js"></script>
+</body>
+
+</html>

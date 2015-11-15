@@ -1,0 +1,204 @@
+body{
+  font-family: 'Quicksand', sans-serif;
+}
+
+.nav-header{
+  position: fixed;
+  width: 100%;
+  height: 50px;
+}
+
+.blood-orange-b{
+  background-color: #fe5f55;
+}
+
+.slate-blue-b{
+  background-color: #4f6367
+}
+
+.slate-blue-t{
+  background-color: #4f6367
+}
+
+.logo-button{
+  width: 40px;
+  height: 40px;
+  margin-left: 10px;
+  border-radius: 20px;
+  margin-top: 5px;
+}
+
+.patient-menu{
+  position: fixed;
+  right: -250px;
+  margin-top: -15px;
+  height: 100vh;
+  width: 250px;
+  background-color: #4f6367;
+  transition: 1s;
+}
+
+#patient:hover ~ .patient-menu {
+  right: 0px;
+  transition: 1s;
+}
+
+.user-menu{
+  position: fixed;
+  left: -250px;
+  margin-top: -15px;
+  height: 100vh;
+  width: 250px;
+  background-color: #4f6367;
+  transition: 1s;
+}
+
+#user:hover ~ .user-menu {
+  left: 0px;
+  transition: 1s;
+}
+
+.user-menu:hover{
+  left: 0px;
+  transition: 1s;
+}
+
+.patient-menu:hover{
+  right: 0px;
+  transition: 1s;
+}
+
+.inline{
+  display: inline-block;
+}
+
+.whiteish-t{
+  color: #eef5ed;
+}
+
+.whiteish-b{
+  background-color: #eef5ed;
+}
+
+.profile-header{
+  height: 110px;
+  font-weight: normal;
+  background-image: url('/static/petback.png');
+  background: auto;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.user-header{
+  height: 110px;
+  font-weight: normal;
+  background-image: url('/static/techback.png');
+  background: auto;
+  text-align: right;
+  padding-right: 20px;
+}
+
+.offwhite-b{
+  background-color: #EEF5DB;
+}
+.petname{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.username{
+  margin-top: 20px;
+  font-size: 18px;
+}
+
+.ownername{
+  margin-top: 5px;
+  font-size: 15px;
+  font-style: italic;
+}
+
+.breed{
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.role{
+  margin-top: 5px;
+  font-size: 11px;
+}
+
+.menuitem{
+  margin-left: 20px;
+}
+
+.menuitem-container{
+  margin-top: 20px;
+  padding-bottom: 20px;
+  width: 100%;
+  border-bottom: 1px solid #b8d8d8;
+  background-color: hsla(138, 95%, 52%, 0);
+  transition: 2s;
+}
+
+.menuitem-container:hover{
+  transition: 1s;
+  background-color: #7a9e9f;
+}
+
+.menuicon{
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  margin-left: 20px;
+  margin-bottom: -12px;
+  margin-top: -5px;
+}
+
+.patient-avatar{
+  margin-top: 20px;
+  margin-left: 10px;
+  transition: .5s;
+  display: inline-block;
+  float: left;
+  width: 77px;
+  height: 77px;
+}
+
+.user-avatar{
+  margin-top: 20px;
+  margin-left: 10px;
+  border-radius: 50px;
+  transition: .5s;
+  display: inline-block;
+  float: left;
+  width: 77px;
+  height: 77px;
+}
+
+.patient-avatar:hover{
+  width: 80px;
+  height: 80px;
+  transition: .5s;
+}
+
+.user-avatar:hover{
+  width: 80px;
+  height: 80px;
+  transition: .5s;
+}
+
+.central{
+  font-size: 35px;
+  -webkit-margin-before: 0em !important;
+  -webkit-margin-after: 0em !important;
+  padding-bottom: 10px;
+}
+
+.menu-button{
+  width: 30px;
+  height: 30px;
+  float: right;
+  margin-top: 10px;
+  margin-right: 10px;
+  cursor: pointer;
+}
