@@ -6,36 +6,55 @@ angular.module('didacticMeowApp', ['firebase', 'ui.router'])
 
   .config(function($stateProvider, $urlRouterProvider){
     $stateProvider
-      .state('ROUTE1', {
-        url: '/',
-        templateUrl: '',
-        controller: '',
+      .state('login', {
+        url: '/login',
+        templateUrl: 'authentication/login.html',
+        controller: 'loginCtrl',
         resolve: {
-
+          // loginRef: function(userService){
+          //   return userService.getUsers();
+          // }
         }
       })
-      .state('ROUTE2', {
-        url: '',
-        templateUrl: '',
-        controller: '',
+      .state('signup', {
+        url: '/signup',
+        templateUrl: 'authentication/signup.html',
+        controller: 'signupCtrl',
         resolve: {
-
+          usersRef: function(userService){
+            return userService.getUsers();
+          }
         }
       })
-      .state('ROUTE3', {
-        url: '',
-        templateUrl: '',
-        controller: '',
+      .state('selection', {
+        url: '/selection',
+        templateUrl: 'selection/selection.html',
+        controller: 'selectionCtrl',
         resolve: {
-
+          selectionRef: function(selectionService){
+            return selectionService.getPatients();
+          }
         }
       })
-      .state('ROUTE4', {
-        url: '',
-        templateUrl: '',
-        controller: '',
+      .state('vitals', {
+        url: '/vitals',
+        templateUrl: 'vitals/vitals.html',
+        controller: 'vitalsCtrl',
         resolve: {
-
+          vitalsRef: function(vitalsService){
+            return vitalsService.getVitals();
+          },
+          heartRef: function(vitalsService){
+            return vitalsService.getHeartRate();
+          },
+          breathRef: function(vitalsService){
+            return vitalsService.getBreathRate();
+          },
+          tempRef: function(vitalsService){
+            return vitalsService.getTemp();
+          }
         }
       })
-  })
+
+    $urlRouterProvider.otherwise('login');
+  });

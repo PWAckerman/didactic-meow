@@ -1,18 +1,20 @@
-<div class="nav-header blood-orange-b inline">
+<div class="nav-header blood-orange-b inline" ng-show="user">
   <img class="logo-button inline" id="user" src="http://placehold.it/120x120"/>
   <div class="user-menu" id="usermenu">
     <div class="whiteish-b user-header">
-      <img src="static/tech.png" class="user-avatar"/>
-      <span class="whiteish-t inline username">Mimi Rogers</span>
-      <span class="whiteish-t inline role">Vet Technician</span></br>
-      <span class="whiteish-t inline ownername">VHUP</span>
+      <img src="static/profile-placeholder.gif" class="user-avatar"/>
+      <span class="whiteish-t inline username">{{user.fullname}}</span>
+      <span class="whiteish-t inline role">{{user.position}}</span></br>
+      <span class="whiteish-t inline ownername">{{user.organization}}</span>
     </div>
     <div>
       <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Organization</span></div>
       <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Profile</span></div>
       <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Assigned Patients</span></div>
-      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Settings</span></div>
+      <div class="menuitem-container" ng-click="logout()"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Logout</span></div>
     </div>
+  </div>
+  <div class="fadeoutblack">
   </div>
   <p class="whiteish-t central inline">didactic meow</p>
   <img id="patient" class="menu-button" src="/static/menubtn.svg"/>
@@ -31,4 +33,5 @@
       <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Orders</span></div>
     </div>
   </div>
+  <div class="fadeoutblackleft"></div>
 </div>
