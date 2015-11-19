@@ -6,6 +6,11 @@ angular.module('didacticMeowApp').controller('selectionCtrl',function($scope, se
   $scope.newPatient.species = 'dog';
   $scope.newPatient.speciesThumb = 'static/dog.svg'
   $scope.speciesIndex = 0;
+  $scope.selectPatient = function(id){
+      $scope.$emit('patientSelected', {
+        data: id
+      });
+  }
   $scope.fileChanged = function() {
     var reader = new FileReader();
     var imgFileInput = document.getElementById('file-upload');
@@ -26,7 +31,8 @@ angular.module('didacticMeowApp').controller('selectionCtrl',function($scope, se
       breed: $scope.newPatient.breed,
       species: $scope.newPatient.species,
       speciesThumb: $scope.newPatient.speciesThumb,
-      photograph: $scope.newPatient.photograph
+      photograph: $scope.newPatient.photograph,
+      enteredBy: $scope.authObj.uid
     });
     $scope.patients.$add({
       Name: $scope.newPatient.Name,
@@ -35,7 +41,9 @@ angular.module('didacticMeowApp').controller('selectionCtrl',function($scope, se
       breed: $scope.newPatient.breed,
       species: $scope.newPatient.species,
       speciesThumb: $scope.newPatient.speciesThumb,
-      photograph: $scope.newPatient.photograph
+      photograph: $scope.newPatient.photograph,
+      internalId: Math.floor(Math.random() * 100000),
+      enteredBy: $scope.authObj.uid
     }).then(function(resolve){
       console.log(resolve);
       $scope.newPatient.Name = '';

@@ -2,9 +2,11 @@ angular.module('didacticMeowApp').service('userService', function(firebase, $fir
   var authRef = new Firebase(firebase.url);
   var userRef = new Firebase(firebase.url + '/users/');
   var auth = $firebaseAuth(authRef);
+
   this.getUser = function(){
     return auth.$getAuth();
   }
+  
   this.getUsers = function(){
     return new Firebase(firebase.url + '/users/');
   }

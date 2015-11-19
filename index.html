@@ -11,8 +11,8 @@
   <link rel="stylesheet" href="/css/master.css" media="screen" title="no title" charset="utf-8">
 </head>
 
-<body ng-app="didacticMeowApp" class="offwhite-b">
-  <nav></nav>
+<body ng-app="didacticMeowApp" ng-controller="masterCtrl" class="offwhite-g">
+  <nav ng-hide="hidden"></nav>
   <div class="container" ui-view></div>
   <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.2.15/angular-ui-router.js"></script>
@@ -20,13 +20,19 @@
   <script src="https://cdn.firebase.com/libs/angularfire/1.1.3/angularfire.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.8/d3.js"></script>
   <script src="app.js"></script>
+  <script src="masterCtrl.js"></script>
   <script src="nav/navDirective.js"></script>
+  <script src="authentication/authFactory.js"></script>
   <script src="authentication/loginCtrl.js"></script>
   <script src="authentication/signupCtrl.js"></script>
   <script src="authentication/userService.js"></script>
   <script src="vitals/vitalsCtrl.js"></script>
   <script src="vitals/vitalsService.js"></script>
   <script src="vitals/chartService.js"></script>
+  <script src="history/historyCtrl.js"></script>
+  <script src="medication/medicationCtrl.js"></script>
+  <script src="orders/ordersCtrl.js"></script>
+  <script src="labs/labsCtrl.js"></script>
   <script src="selection/selectionCtrl.js"></script>
   <script src="selection/selectionService.js"></script>
 </body>

@@ -1,5 +1,6 @@
 angular.module('didacticMeowApp').controller('loginCtrl', function($scope, userService, $state, firebase, $firebaseObject){
   $scope.error = '';
+  sessionStorage.user = '';
   $scope.login = function(){
     userService.login($scope.user).then(
         function(authData){
@@ -16,17 +17,12 @@ angular.module('didacticMeowApp').controller('loginCtrl', function($scope, userS
                 }
               }
               sessionStorage.user = JSON.stringify($scope.sessionData);
+              $scope.$emit('login', {
+                data: $scope.sessionData
+              });
             }
           )
-          // localStorage.user = (JSON.stringify(user));
-          // console.log(localStorage.user);
-
         }
-    ).then(
-      function(resolve){
-          console.log($scope.userperson);
-          $state.go('selection');
-      }
     ).catch(
       function(err){
         if(err.code = "INVALID_EMAIL"){
