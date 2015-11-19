@@ -1,5 +1,6 @@
 <div class="row-spacer"></div>
 <div class="row">
+  <div class="patient-container">
   <div class="medication-box" style="height: 250px;">
     <form ng-submit="submitMedication()">
       <div class="medication-box-row" style="padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid white;"><input name="name" ng-model="newMed.name" placeholder="New Medication" style="text-align: center; background: none;" type="text"></div>
@@ -14,4 +15,5 @@
     </form>
   </div>
   <med-box ng-repeat="medication in medications" medication="medication"></med-box>
+</div>
 </div>
