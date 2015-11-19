@@ -1,1 +1,17 @@
-<div></div>
+<div class="row-spacer"></div>
+<div class="row">
+  <div class="medication-box" style="height: 250px;">
+    <form ng-submit="submitMedication()">
+      <div class="medication-box-row" style="padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid white;"><input name="name" ng-model="newMed.name" placeholder="New Medication" style="text-align: center; background: none;" type="text"></div>
+      <div class="medication-box-row left margin-bumper-left"><input name="name" ng-model="newMed.dose" placeholder="New Dose" style="text-align: left; background: none;" type="text"></div>
+      <div class="medication-box-row">Dose Frequency</div>
+      <div class="medication-box-row margin-bumper-left" style="font-size: 30px; color: gray;">
+        <div class="med-frequency" ng-click="setFrequency(1)">1</div>
+        <div class="med-frequency" ng-click="setFrequency(2)">2</div>
+        <div class="med-frequency" ng-click="setFrequency(3)">3</div>
+      </div>
+      <button class="record-submit">SUBMIT MEDICATION</button>
+    </form>
+  </div>
+  <med-box ng-repeat="medication in medications" medication="medication"></med-box>
+</div>

@@ -11,9 +11,9 @@
       <span class="whiteish-t inline ownername">{{user.organization}}</span>
     </div>
     <div>
-      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Organization</span></div>
-      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Profile</span></div>
-      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Assigned Patients</span></div>
+      <!-- <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Organization</span></div>
+      <div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Profile</span></div> -->
+      <a href="#/selection"><div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Assigned Patients</span></div></a>
       <div class="menuitem-container" ng-click="logout()"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Logout</span></div>
     </div>
   </div>
@@ -33,16 +33,16 @@
       <span class="whiteish-t inline ownername">{{patientData.owner}}</span>
     </div>
     <div>
-      <a href="#/history/{{patientId}}"><div class="menuitem-container" style="margin-top: 5px;"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">History</span></div></a>
-      <a href="#/vitals/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Vitals</span></div></a>
-      <a href="#/medication/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Medication</span></div></a>
-      <a href="#/labs/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Labs</span></div></a>
-      <a href="#/orders/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Orders</span></div></a>
+      <a href="#/history/{{patientId}}"><div class="menuitem-container" style="margin-top: 5px;"><img class="menuicon inline" src="static/history.png"/><span class="whiteish-t menuitem">History</span></div></a>
+      <a href="#/vitals/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="static/dogmedicine.png"/><span class="whiteish-t menuitem">Vitals</span></div></a>
+      <a href="#/medication/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="static/medhat.png"/><span class="whiteish-t menuitem">Medication</span></div></a>
+      <!-- <a href="#/labs/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Labs</span></div></a>
+      <a href="#/orders/{{patientId}}"><div class="menuitem-container"><img class="menuicon inline" src="http://placehold.it/120x120"/><span class="whiteish-t menuitem">Orders</span></div></a> -->
     </div>
     </div>
     <div ng-show="noPatient">
-      <div class="menuitem-container"><h2 class="whiteish-t" style="margin-left: 10px;">Select a patient...</h2></div>
-      <div class="menuitem-container" ng-repeat="patient in patients"><a href="#/history/{{patient.internalId}}"><img class="menuicon inline" ng-src="{{patient.photograph}}"/><span class="whiteish-t menuitem">{{patient.Name}}</span></a></div>
+      <div class="menuitem-container" style="background: linear-gradient(180deg, rgba(18, 115, 140, 0), hsl(191, 36%, 38%) )"><h2 class="whiteish-t" style="margin-left: 10px;">Select a patient...</h2></div>
+      <div class="menuitem-container" ng-repeat="patient in patients" ng-click="selectPatient(patient.internalId)"><img class="menuicon inline" ng-src="{{patient.photograph}}"/><span class="whiteish-t menuitem">{{patient.Name}}</span></div>
     </div>
   </div>
   <div class="fadeoutblackleft"></div>

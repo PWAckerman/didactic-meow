@@ -381,6 +381,7 @@ a{
   border-bottom: 1px solid #b8d8d8;
   background-color: hsla(138, 95%, 52%, 0);
   transition: 2s;
+  cursor: pointer;
 }
 
 .menuitem-container:hover{
@@ -747,4 +748,62 @@ a{
 
 .record-submit:hover{
   background-color: #598f90;
+}
+/* Medication */
+.medication-box{
+  display: inline-block;
+  width: 250px;
+  height: 150px;
+  border-radius: 5px;
+  margin-left: 10px;
+  margin-right: 10px;
+  margin-top: 10px;
+  background-color: rgba(75, 75, 75, 0.67);
+  color: white;
+}
+
+.medication-box-row{
+  width: 100%;
+  height: auto;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.left{
+  text-align: left;
+}
+
+.margin-bumper-left{
+  margin-left: 10px;
+}
+
+.med-frequency{
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+  border-radius: 50px;
+  background-color: #7a9e9f;
+  cursor: pointer;
+}
+
+.med-frequency-active{
+  display: inline-block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 25px;
+  padding-right: 25px;
+  margin: 5px;
+  border-radius: 50px;
+  background-color: #dd4b39;
+  cursor: pointer;
+  transition: 1s;
+}
+
+.med-frequency:hover{
+  background-color: #4f6367;
+  color: white;
+  transition: .5s;
 }

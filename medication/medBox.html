@@ -1,0 +1,7 @@
+<div class="medication-box">
+  <img src="static/pill.svg" class="inputicon margin-bumper-left" style="float: left;"/><div class="medication-box-row" style="padding-top: 10px; padding-bottom: 10px; border-bottom: 1px solid white;">{{medication.name}}</div>
+  <div class="medication-box-row left margin-bumper-left">{{medication.dose}}</div>
+  <div class="medication-box-row left margin-bumper-left">{{medication.frequency}} {{medication.frequencyText}}</div>
+  <div class="medication-box-row left margin-bumper-left">Administered: {{medication.count}}&nbsp;&nbsp;&nbsp;{{medication.time | date: 'shortTime'}}</div>
+  <button class="record-submit" ng-click="administer()">ADMINISTER</button>
+</div>

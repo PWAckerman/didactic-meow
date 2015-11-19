@@ -2,20 +2,49 @@
 <div class="row whiteish-t">
   <div class="record-box" style="text-align: left; background-color: rgba(222, 222, 222, 0.88)">
     <form ng-submit="submitRecord()">
-    <div class="row" style="border-bottom: 1px solid white; text-align: left;"><input class="whiteish-t" style="margin-left: 20px;margin-top: 20px; margin-bottom: 20px; background: none" placeholder="New Record" ng-model="newRecord.title"/></div>
-    <div class="row" style="padding-top: 10px;"><div style="text-align: left; margin-left: 20px"><span>{{currentDate | date}}</span></div></div>
-    <div class="row" style="text-align: left;"><p style="margin-left: 20px">Condition:<input class="whiteish-t" style="margin-left: 20px;margin-top: 10px; margin-bottom: 10px; background: none" placeholder="New Condition" ng-model="newRecord.condition"/></p></div>
-    <div class="row" style="text-align: left;"><p style="margin-left: 20px">Admitted By: {{authObj.password.email}}</p></div>
-    <div class="row" style="text-align: left;"><p style="margin-left: 20px">Location:<input class="whiteish-t" style="margin-left: 20px;margin-top: 10px; margin-bottom: 10px; background: none" placeholder="New Location" ng-model="newRecord.location"/></p></div>
-    <button class="record-submit">SUBMIT RECORD</button>
+      <div class="row" style="border-bottom: 1px solid white; text-align: left;"><input class="whiteish-t" ng-model="newRecord.title" placeholder="New Record" style="margin-left: 20px;margin-top: 20px; margin-bottom: 20px; background: none"/></div>
+      <div class="row" style="padding-top: 10px;">
+        <div style="text-align: left; margin-left: 20px">
+          <span>{{currentDate | date}}</span>
+        </div>
+      </div>
+      <div class="row" style="text-align: left;">
+        <p style="margin-left: 20px">Condition:<input class="whiteish-t" ng-model="newRecord.condition" placeholder="New Condition" style="margin-left: 20px;margin-top: 10px; margin-bottom: 10px; background: none"/></p>
+      </div>
+      <div class="row" style="text-align: left;">
+        <p style="margin-left: 20px">Admitted By:
+          {{authObj.password.email}}</p>
+      </div>
+      <div class="row" style="text-align: left;">
+        <p style="margin-left: 20px">Location:<input class="whiteish-t" ng-model="newRecord.location" placeholder="New Location" style="margin-left: 20px;margin-top: 10px; margin-bottom: 10px; background: none"/></p>
+      </div>
+      <button class="record-submit">SUBMIT RECORD</button>
     </form>
   </div>
-  <div class="record-box" style="text-align: left;" ng-repeat="record in history">
-    <div class="row" style="border-bottom: 1px solid white; text-align: left;"><p class="whiteish-t record-header" style="margin-left: 20px;">{{record.title}}</p></div>
-    <div class="row" style="padding-top: 10px;"><div style="text-align: left; margin-left: 20px"><span>{{record.date | date}}</span></div></div>
-    <div class="row" style="text-align: left;"><p style="margin-left: 20px">Condition: {{record.condition}}</p></div>
-    <div class="row" style="text-align: left;"><p style="margin-left: 20px">Admitted By: {{record.admittedBy}}</p></div>
-    <div class="row" style="text-align: left;"><p style="margin-left: 20px">Location: {{record.location}}</p></div>
-    <div class="row" style="text-align: left;"><p style="margin-left: 20px">Released: {{record.dateReleased}}</p></div>
+  <div class="record-box" ng-repeat="record in history" style="text-align: left;">
+    <div class="row" style="border-bottom: 1px solid white; text-align: left;">
+      <p class="whiteish-t record-header" style="margin-left: 20px;">{{record.title}}</p>
+    </div>
+    <div class="row" style="padding-top: 10px;">
+      <div style="text-align: left; margin-left: 20px">
+        <span>{{record.date | date}}</span>
+      </div>
+    </div>
+    <div class="row" style="text-align: left;">
+      <p style="margin-left: 20px">Condition:
+        {{record.condition}}</p>
+    </div>
+    <div class="row" style="text-align: left;">
+      <p style="margin-left: 20px">Admitted By:
+        {{record.admittedBy}}</p>
+    </div>
+    <div class="row" style="text-align: left;">
+      <p style="margin-left: 20px">Location:
+        {{record.location}}</p>
+    </div>
+    <div class="row" style="text-align: left;">
+      <p style="margin-left: 20px">Released:
+        {{record.dateReleased}}</p>
+    </div>
   </div>
 </div>
