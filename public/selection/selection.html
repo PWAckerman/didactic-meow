@@ -1,0 +1,63 @@
+<div style="width: 100%; height: 100px"></div>
+<div class="patient-container">
+  <div class="patient-box" ng-click="selectPatient(patient.internalId)" ng-repeat="patient in patients">
+    <div style="width: 250px; height: 100px; overflow: hidden; margin: -1px; position: absolute; border-top-left-radius: 5px; border-top-right-radius: 5px;">
+      <div class="patient-box-header" style="background-image: url('{{patient.photograph}}'); background-position: center center;"></div>
+    </div>
+    <img class="patient-box-avatar" ng-src="{{patient.photograph}}"/>
+    <span class="patient-box-name" style="padding-top: 10px;">{{patient.Name}}</span>
+    <div class="info-bar">
+      <img class="species-icon" ng-src="{{patient.speciesThumb}}" style="float: left;">
+      <div style="padding-top: 20px">{{patient.breed}}</div>
+    </div>
+    <div class="deets-row">
+      <span class="patient-box-deets">
+        <strong>Owner:</strong>
+      </span>
+      <span class="patient-box-deets float-right">{{patient.owner || 'Unspecified'}}</span>
+    </div>
+    <div class="deets-row">
+      <span class="patient-box-deets">
+        <strong>Date Admitted:</strong>
+      </span>
+      <span class="patient-box-deets float-right">
+        {{patient.dateAdded | date}}</span>
+    </div>
+    <div class="deets-row">
+      <span class="patient-box-deets">
+        <strong>Date Released:</strong>
+      </span>
+      <span class="patient-box-deets float-right">
+        ACTIVE</span>
+    </div>
+    <div class="patient-box-bottom">
+      <button class="patient-button slate-blue-b"></button>
+    </div>
+  </div>
+  <div class="patient-box" style="background-color: lightgray; color: gray;">
+    <div class="patient-box-header-new" style="background-color: #8e9696; border-bottom: 1px solid lightgray; margin-bottom: -40px;">
+      <img class="patient-box-avatar" src="static/placeholder.gif"/>
+      <input ng-model="newPatient.Name" placeholder="NEW PATIENT" style="margin-top: 35px; width: 150px; background-color: #8e9696; color: white; margin-left: 10px;" type="text"/>
+    </div>
+    <div class="info-bar">
+      <img class="species-icon" ng-click='changeSpecies()' ng-src="{{newPatient.speciesThumb}}" style="float: left;">
+      <input class="float-right margin-right" name="name" ng-model='newPatient.breed' placeholder="Breed" style="width: 160px; margin-top: 20px;" type="text" value="">
+    </div>
+    <div class="deets-row" style="margin-bottom: 20px;">
+      <span class="patient-box-deets">
+        <strong>Owner:</strong>
+      </span>
+      <input class="float-right margin-right" name="name" ng-model='newPatient.owner' placeholder="Owner" style="width: 150px;" type="text" value="">
+    </div>
+    <div class="deets-row">
+      <span class="patient-box-deets">
+        <strong>Date Admitted:</strong>
+      </span>
+      <span class="float-right margin-right">{{newPatient.dateAdded | date}}</span>
+    </div>
+    <div class="patient-box-bottom">
+      <div class="camera-button"><input class="custom-file-input" id="file-upload" ng-model="newPatient.photograph" onchange="angular.element(this).scope().fileChanged()" type="file"/><img class='camera-button-img' src="static/camera.png" style="float: left; margin-top: -43px; margin-left: 14px"/></div>
+      <button class="patient-button blood-orange-b" ng-click="addNewPatient()" style="margin-top: 35px;">+</button>
+    </div>
+  </div>
+</div>

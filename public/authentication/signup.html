@@ -1,0 +1,27 @@
+<div class="loginContainer">
+  <div class="loginBox">
+    <div class="loginSubBox" style="height: auto;">
+      <div class="box-header">
+        <span>Create an account</span>
+      </div>
+      <form ng-submit="register(newUser)">
+        <div class="inputcontainer"><img class="inputicon" src="http://placehold.it/25x25"/><input class="logininput" name="name" ng-model="fullname" placeholder="Full Name" type="text" value=""></div>
+        <div class="inputcontainer"><img class="inputicon" src="http://placehold.it/25x25"/><input class="logininput" name="name" ng-model="position" placeholder="Position" type="text" value=""></div>
+        <div class="inputcontainer"><img class="inputicon" src="http://placehold.it/25x25"/><input class="logininput" name="name" ng-model="organization" placeholder="Organization" type="text" value=""></div>
+        <div class="inputcontainer"><img class="inputicon" src="http://placehold.it/25x25"/><input class="logininput" name="name" ng-model="newUser.email" placeholder="E-Mail" type="email" value=""></div>
+        <div class="inputcontainer"><img class="inputicon" src="http://placehold.it/25x25"/><input class="logininput" name="name" ng-model="newUser.password" placeholder="Password" type="password" value=""></div>
+        <div class="btn-login" ng-click="register(newUser)">Sign Up</div>
+      </form>
+    </div>
+    <div class="social-container" style="color: #EEF5DB;">
+      <span>Or, sign up with</span>
+      <i class="socicon-facebook facebook-blue"></i>
+      <i class="socicon-github github-gray"></i>
+      <i class="socicon-google google-red"></i>
+    </div>
+    <a ng-href="#/login" style="margin-top: 50px; text-decoration: none;">
+      <div class="btn-ghost">I already have an account</div>
+    </a>
+  </div>
+
+</div>
