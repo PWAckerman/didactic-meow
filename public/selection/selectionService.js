@@ -1,8 +1,9 @@
 angular.module('didacticMeowApp').service('selectionService', function(firebase) {
-  var user = '1';
+  //setup a firebase reference
   this.getPatients = function() {
     return new Firebase(firebase.url + '/patients/')
   }
+  //species and their corresponding image paths
   this.speciesList = [{
     'dog': 'static/dog.svg'
   }, {

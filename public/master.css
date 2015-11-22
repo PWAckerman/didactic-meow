@@ -1,7 +1,9 @@
+/*set default font for entire app*/
 body{
   font-family: 'Quicksand', sans-serif;
 }
 
+/*fade in animation, refactor this later to only effect certain divs so isn't so overdone*/
 *{
 -webkit-animation: fadein 2s; /* Safari, Chrome and Opera > 12.1 */
    -moz-animation: fadein 2s; /* Firefox < 16 */
@@ -33,6 +35,7 @@ from { opacity: 0; }
 to   { opacity: 1; }
 }
 
+/*set some base styles for elements*/
 input{
   outline: none;
   border: none;
@@ -53,7 +56,7 @@ a{
   text-decoration: none;
 }
 
-/* D3 Styles */
+/* D3 Styles, make these better if time to be more consistent with app styling */
 
 .axis path, .axis line
 {
@@ -77,6 +80,8 @@ a{
 {
     fill: FireBrick;
 }
+
+/* other vitals view styling */
 
 #visualisation{
   margin-top: 20px;
@@ -166,6 +171,8 @@ a{
   transition: .5s;
 }
 
+/* login, signup view styling */
+
 .inputcontainer{
   width: 90%;
   height: 35px;
@@ -189,6 +196,69 @@ a{
   margin-right: 5px;
   margin-top: -10px;
   width: 215px;
+}
+
+.loginContainer{
+  width: 100%;
+  height: 100vh;
+  padding-top: 100px;
+  text-align: center;
+  background: linear-gradient(90deg, #7a9e9f, #627c7d )
+}
+
+.loginBox{
+  width: 300px;
+  height: 500px;
+  display: inline-block;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.loginSubBox{
+  width: 100%;
+  height: 200px;
+  padding-top: 20px;
+  background-color: #eef5ed;
+  border: 1px solid rgba(#edf5ec, 0.78);
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.box-header{
+  width: 100%;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #ffffff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.social-container{
+  margin-top: 40px;
+  width: 100%;
+  color: rgba(#edf5ec, 0.78) !important;
+}
+
+.btn-login{
+  width: 100%;
+  height: 40px;
+  margin-top: 31px;
+  bottom: 0px;
+  background-color: #4f6367;
+  color: #eef5ed;
+  font-size: 25px;
+  padding-top: 10px;
+  line-height: 31px;
+  transition: 1s;
+  cursor: pointer;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+.btn-login:hover{
+  background-color: #3b484b;
+  transition: .5s;
 }
 
 .error-message{
@@ -219,14 +289,14 @@ a{
   transition: .5s;
   outline: none;
 }
-
+/*nav directive styling*/
 .nav-header{
   position: fixed;
   width: 100%;
   height: 50px;
   z-index: 100;
 }
-
+/*some base coloring*/
 .blood-orange-b{
   background-color: #fe5f55;
 }
@@ -239,6 +309,22 @@ a{
   color: #4f6367
 }
 
+.offwhite-b{
+  background-color: #EEF5DB;
+}
+
+.offwhite-g{
+  background: linear-gradient(90deg, #EEF5DB, #e6f4c3 )
+}
+
+.whiteish-t{
+  color: #eef5ed;
+}
+
+.whiteish-b{
+  background-color: #eef5ed;
+}
+
 .logo-button{
   width: 40px;
   height: 40px;
@@ -246,7 +332,7 @@ a{
   border-radius: 20px;
   margin-top: 5px;
 }
-
+/*hover menu slideout functionality*/
 .patient-menu{
   position: fixed;
   right: -250px;
@@ -273,7 +359,7 @@ a{
   transition: 1s;
   z-index: 10;
 }
-
+/*fadeouts to accompany slideout menus, darken working areas*/
 .fadeoutblack{
   position: fixed;
   right: -100vw;
@@ -339,14 +425,6 @@ a{
   display: inline-block;
 }
 
-.whiteish-t{
-  color: #eef5ed;
-}
-
-.whiteish-b{
-  background-color: #eef5ed;
-}
-
 .profile-header{
   height: 110px;
   font-weight: normal;
@@ -365,14 +443,6 @@ a{
   padding-right: 20px;
 }
 
-.offwhite-b{
-  background-color: #EEF5DB;
-}
-
-.offwhite-g{
-  background: linear-gradient(90deg, #EEF5DB, #e6f4c3 )
-}
-
 .petname{
   margin-top: 20px;
   font-size: 18px;
@@ -382,8 +452,6 @@ a{
   margin-top: 20px;
   font-size: 16px;
 }
-
-
 
 .ownername{
   margin-top: 5px;
@@ -479,68 +547,6 @@ a{
   cursor: pointer;
 }
 
-.loginContainer{
-  width: 100%;
-  height: 100vh;
-  padding-top: 100px;
-  text-align: center;
-  background: linear-gradient(90deg, #7a9e9f, #627c7d )
-}
-
-.loginBox{
-  width: 300px;
-  height: 500px;
-  display: inline-block;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.loginSubBox{
-  width: 100%;
-  height: 200px;
-  padding-top: 20px;
-  background-color: #eef5ed;
-  border: 1px solid rgba(#edf5ec, 0.78);
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.box-header{
-  width: 100%;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #ffffff;
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-}
-
-.social-container{
-  margin-top: 40px;
-  width: 100%;
-  color: rgba(#edf5ec, 0.78) !important;
-}
-
-.btn-login{
-  width: 100%;
-  height: 40px;
-  margin-top: 31px;
-  bottom: 0px;
-  background-color: #4f6367;
-  color: #eef5ed;
-  font-size: 25px;
-  padding-top: 10px;
-  line-height: 31px;
-  transition: 1s;
-  cursor: pointer;
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-
-.btn-login:hover{
-  background-color: #3b484b;
-  transition: .5s;
-}
 
 /*Patient Selection*/
 .patient-container{
@@ -571,6 +577,7 @@ a{
   transition: .5s;
 }
 
+/* filters for blurring, and darkening */
 .patient-box-header{
   width: 100%;
   height: 100px;
@@ -588,6 +595,8 @@ a{
   z-index: -100;
   -webkit-filter: brightness(0.5) blur(5px);
 }
+
+/* patient box styling */
 
 .patient-box-avatar{
   margin-top: 10px;

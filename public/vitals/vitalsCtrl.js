@@ -1,25 +1,21 @@
 angular.module('didacticMeowApp').controller('vitalsCtrl',
   function($scope, chartService, vitalsRef, heartRef, breathRef, tempRef, $firebaseArray, $stateParams, firebase, $firebaseObject){
     console.log($stateParams.patientId);
+    //put the patientId from the params into the scope
     $scope.patientId = $stateParams.patientId;
+    //REFS FOR EVERYTHING !
     var vitalsRef = new Firebase(firebase.url + 'vitals/' + $scope.patientId);
     var heartRef = new Firebase(firebase.url + 'vitals/'  + $scope.patientId + '/heartrate/');
     var breathRef = new Firebase(firebase.url + 'vitals/'  + $scope.patientId + '/breathrate/');
     var tempRef = new Firebase(firebase.url + 'vitals/'  + $scope.patientId + '/temp/');
-
-    // var vitalsList = $firebaseObject(vitalsRef);
-    // vitalsList.$loaded().then(
-    //   function(resolve){
-    //     $scope.vitalsList = vitalsList;
-    //   }
-    // )
+    //ARRAYS FOR EVERYTHING! vitalsarray might not be necessary
     $scope.current = '';
     $scope.vitals = $firebaseArray(vitalsRef);
     $scope.heart = $firebaseArray(heartRef);
     $scope.temp = $firebaseArray(tempRef);
     $scope.breath = $firebaseArray(breathRef);
+    //once the vitals are loaded, then we make the default chart; then we make the functions to contstruct other charts
     $scope.vitals.$loaded().then(function (vitals) {
-      $scope.InitChart = chartService.InitChart($scope.heart);
       $scope.heartChart = function(){
         $scope.current = 'Heart Rate';
         return chartService.InitChart($scope.heart);}
@@ -31,6 +27,7 @@ angular.module('didacticMeowApp').controller('vitalsCtrl',
         return chartService.InitChart($scope.temp);}
       $scope.heartChart();
     });
+    //pass heart reading to firebase array, and recalculate the chart
     $scope.addHeartReading = function(){
       $scope.heart.$add({
         reading: $scope.newHeart,
@@ -43,6 +40,7 @@ angular.module('didacticMeowApp').controller('vitalsCtrl',
         }
       )
     }
+    //same thing, for respiration
     $scope.addBreathReading = function(){
       $scope.breath.$add({
         reading: $scope.newBreath,
@@ -55,6 +53,7 @@ angular.module('didacticMeowApp').controller('vitalsCtrl',
         }
       )
     }
+    //same thing, for temps
     $scope.addTempReading = function(){
       $scope.temp.$add({
         reading: $scope.newTemp,
